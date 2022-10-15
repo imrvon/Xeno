@@ -707,6 +707,7 @@ ul {
 }
 
 .like-and-edit {
+  display: none;
   width: 90%;
   margin: 1rem auto;
 }
