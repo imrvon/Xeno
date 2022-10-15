@@ -1,0 +1,55 @@
+{% extends '_partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="my-profile">
+    <div class="my-profile-top">
+        <h2 class="my-profile-btn">Welcome {{current_page_user}}</h2>
+        <button type="submit" onclick="location.href='{% url 'add_post' %}'" class="my-profile-btn">Add New Post</button>
+    </div>
+    
+    <section class="landing-section-container landing-layout-three">
+        <div class="landing-third-row">
+            {% for post in posts %}
+            <div class="landing-section-three-column landing-article-layout">
+                <div>
+                    {{post.created_on}}
+                </div>
+                <div class="cat-author-text">
+                    <span>By {{post.author}} </span> - {% for tag in post.category.all %}
+                    <a href="{% url 'category' tag %}">{{ tag }}</a>
+                {% endfor %}
+                </div>
+                <h3 class="landing-article-head"><a href="{% url 'post' post.id %}">{{post.title}}</a></h3>
+                <p class="landing-article-text"> {{post.text | safe |slice:":200"}} </p>
+                <div>
+                    <a href="{% url 'post' post.id %}" class="landing-readmore-btn">Read more</a href="{% url 'post' post.id %}">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    
+    <div class="my-profile-bottom">
+        <button class="my-profile-btn" onclick="location.href='{% url 'edit_profile' user.id %}'">Edit Profile</button>
+        
+        <form method='post' action={% url 'logout_user' %}>
+            {% csrf_token %}
+            <input type="submit" value="Sign Out" class="my-profile-btn">
+        </form>
+    </div>
+</div>
+
+
+
+
+{% comment %} {% load cripsy_forms_tags %} {% endcomment %}
+
+    <h1>Edit Profile</h1>
+{% comment %} {% cripsy form %} {% endcomment %}
+{{form}}
+    {% comment %} {{user.userprofile.bio}}
+    <img src="{{user.userprofile.profile_pic.url}}"> {% endcomment %}
+    
+{% endblock content %}

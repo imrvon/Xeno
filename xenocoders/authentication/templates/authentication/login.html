@@ -1,0 +1,120 @@
+{% extends '_partials/base.html' %}
+{% load static %}
+
+{% block content %}
+    <main class="signup-desktop-overall">
+        <section class="signup-top-section">
+            <div class="signup-top-container">
+                <div class="hero-content">
+                    <img src="{% static 'media/mobile-signup.png' %}" alt="image for mobile sign up" class="signup-hero-img">
+                </div>
+                <div class="signup-back-content">
+                    <div class="signup-back-img">
+                        <img src="{% static 'media/back-arrow.png' %}" alt="Back arrow" class="signup-back-arrow">
+                    </div>
+                    <div>
+                        <p class="signup-back-text">Back</p>
+                    </div>
+                    
+                </div>
+                <img src="{% static 'media/signup-pic.png' %}" alt="profile picture" class="signup-middle-section">
+            </div>
+        </section>
+
+        <section class="signup-desktop-hero signup-desktop-input">
+            <div class="signup-desktop-left">
+                <img src="{% static 'media/desktop-rect.png' %}" alt="Rectangle image for desktop view" class="signup-desktop-rect">
+                <div class="signup-left-overlay">
+                    <div class="signup-hero-msg">
+                        <h1 class="signup-hero-text">Welcome back!</h1>
+                    </div>
+                    <div>
+                        <img src="{% static 'media/desktop-signin.png' %}" alt="Sign In hero image for desktop view">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="signup-bottom-section">
+            <div class="signup-container">
+                <div class="signup-logo-container signup-separate-input">
+                    <div class="signup-logo-content">
+                        <img src="{% static 'media/xeno-logo.png' %}" alt="xeno logo" class="signup-xeno-image">
+                        <span><em class="signup-logo-first-text">Xeno</em></span>
+                    </div>
+                    <div>
+                        <p class="signup-logo-text">Coders</p>
+                    </div>
+                </div>
+                <div class="signup-toggle-container signup-separate-input">
+                    <div class="signup-toggle-content signup-toggle-spacing">
+                        <button class="signup-toggle  signup-signup-toggle"></button>
+                        <button class="signup-toggle signup-signin-toggle"></button>
+                    </div>
+                    <div class="signup-toggle-text">
+                        <p class="signup-toggle-word">Sign Up</p>
+                        <p class="signup-toggle-word">Sign In</p>
+                    </div>
+                </div>
+                <div class="signup-form-container">
+                    {% include '_partials/messages.html' %}
+                    <form method="post" action={% url 'login' %} class="signup-form-content">
+                        {% csrf_token %}
+                        <div class="signup-input-content signup-desktop-input">
+                            <input type="text" name="username" required value="{{data.username}}" placeholder="Enter username" class="signup-form-field signup-desktop-field">
+                        </div>
+                        <div class="signup-input-content signup-mobile-input">
+                            <input type="email" name="" id="" placeholder="Enter your email address" class="signup-form-field">
+                        </div>
+                        <div class="signup-input-content">
+                            <input type="password" name="password" required placeholder="Enter password" class="signup-form-field signup-pswd-field">
+                        </div>
+                        <div class="signup-checkbox-flex">
+                            <div class="signup-input-check">
+                                <input type="checkbox" name="" id="" class="signup-check-good">
+                                <span class="signup-check-text">Remember me</span>
+                            </div>
+                            <div>
+                                <a href="{% url 'request-password' %}" class="signup-forgot-text">Forgot password?</a>
+                            </div>
+                        </div>
+                        <input type="submit" value="Log In" class="signup-action">
+                    </form>
+                </div>
+                <div class="signup-container signup-social-container">
+                    <div class="signup-create-content signup-desktop-input">
+                        <p class="signup-quest-text signup-create-text">New on our platform?</p>
+                        <a href="{% url 'register' %}" class="signup-create-link signup-create-text">Create an account</a>
+                    </div>
+                    <div class="signup-social-content">
+                        <p class="signup-social-text">Or</p>
+                        <p class="signup-social-account">With your social account</p>
+                    </div>
+                    <div class="signup-social-media">
+                        
+                            <a href="" class="signup-media-content"><img src="{% static 'media/google-icon.png' %}" alt="Google icon" class="signup-social-icons"></a>
+                        
+                        
+                            <a href="" class="signup-media-content"><img src="{% static 'media/facebook-icon.png' %}" alt="Facebook icon" class="signup-social-icons"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+    <!-- <form method="post" action={% url 'login' %}>
+        {% csrf_token %}
+        <input type="text" name="username" required value="{{data.username}}" placeholder="Username"/>
+        <div class="password"><input type="password" name="password" required placeholder="password"/><i class="fa-solid fa-eye"></i></div>
+        <input type="submit" value="Log In"/>
+
+        <div class="reset-pw">
+            <span href="">Don't have an account? <a href="{% url 'register' %}">Sign Up</a> ·</span>
+            <span href="">Forgot Password? <a href="{% url 'request-password' %}">Reset</a></span>
+        </div>
+    </form> -->
+
+    {% endblock content %}

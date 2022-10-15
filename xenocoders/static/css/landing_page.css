@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+	list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.landing-page-img {
+    width: 100%;
+}
+
+.landing-page-image {
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+}
+
+p, button {
+  font-family: 'Roboto', sans-serif;
+}
+
+.landing-container {
+    max-width: 1200px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.landing-section-container {
+    margin-top: 2em;
+}
+
+.landing-section-content {
+    display: flex;
+}
+
+.landing-line-divider {
+    border: none;
+    border-top: 1px solid grey;
+    margin-top: .3em;
+}
+
+.landing-each_column + .each_column {
+    margin-left: 2em;
+}
+
+.landing-left_column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-right_column {
+    width: 50%;
+}
+
+.landing-top_row {
+    margin-bottom: 2em;
+}
+
+
+
+.landing-profile-flex {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.landing-profile-flex .profile-pic {
+    margin-right: .7em;
+}
+
+.landing-heading-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landing-flex-head {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.landing-flex-right {
+    display: flex;
+    align-items: center;
+}
+
+.landing-timeline-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+}
+
+.landing-timeline-flex {
+    display: flex;
+    align-items: center;
+}
+
+.landing-each_timeline {
+    display: flex;
+    align-items: center;
+}
+
+.landing-each_timeline + .landing-each_timeline {
+    margin-left: 1em;
+}
+
+.landing-each_timeline .landing-each_time {
+    margin-left: .3em;
+    font-weight: 500;
+    font-style: Medium;
+    color: #000000;
+    font-size: 1.25rem;
+
+}
+
+.landing-readmore-btn {
+    border: none;
+    background: #CD8CD8;
+    padding: .6em 1em .6em 2em;
+    border-radius: .25rem;
+    background-image: url(./assets/readmore_arrow.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: .6rem;
+    background-position-x: 1rem;
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-style: Medium;
+    cursor: pointer;
+}
+
+.landing-column-title {
+    font-size: 2.3rem;
+    color: #000000;
+    font-style: SemiBold;
+    font-weight: 600;
+    margin-bottom: 1em;
+    line-height: 3.68rem;
+    Fill: Solid;
+}
+
+
+
+.landing-topmost-section {
+    margin-top: 2em;
+}
+
+.landing-topmost-text {
+    color: #AE1DC7;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.44rem;
+    font-style: Regular;
+    Fill: Solid;
+}
+
+.landing-search-action {
+    /* padding: .5em 2em .5em 3em; */
+    width: 8rem;
+    background: #FFFFFF;
+    background-image: url(./assets/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 1.2rem;
+    background-position-x: .5rem;
+    border: none;
+    font-size: 1.25rem;
+    text-align: right;
+    font-weight: 400;
+    Fill: Solid;
+    /* line-height: 1.44rem; */
+}
+
+
+/* Styling of Layout one section */
+
+.landing-profile-text {
+    font-size: 1.25rem;
+    color: #000000;
+    font-weight: 500;
+    font-size: Medium;
+    Fill: Solid;
+    line-height: 1.43rem;
+}
+
+.landing-hero-content {
+    margin-bottom: 1.5em;
+}
+
+.landing-hero-content .landing-hero-text {
+    font-size: 1.25rem;
+    color: #000000;
+    font-weight: 500;
+    font-style: Medium;
+    Fill: Solid;
+    line-height: 1.43rem;
+}
+
+
+/* Styling of Layout two section */
+
+.landing-bar-img {
+    width: 100%;
+    margin-top: .5em;
+}
+
+.landing-bar-img .landing-bar-image {
+    width: 75%;
+}
+
+.landing-bar-head {
+    margin-left: .2em;
+    font-size: 3rem;
+    line-height: 5.9rem;
+    font-weight: 500;
+    font-style: Medium;
+    Fill: Solid;
+}
+
+.landing-link_text {
+    color: #AE1DC7;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.44rem;
+    font-style: Medium;
+    Fill: Solid;
+}
+
+.landing-right-arrow {
+    margin: .4em 0 0 .7em;
+
+}
+
+.landing-article-layout {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.landing-just-image {
+    width: 100%;
+}
+
+.landing-article-content {
+    width: 50%;
+    margin-left: 1em;
+}
+
+.landing-article-head {
+    color: #000000;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.93rem;
+    font-style: semibold;
+    Fill: Solid;
+    margin-bottom: .5em;
+}
+
+.landing-article-text {
+    color: #000000;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.18rem;
+    font-style: Regular;
+    Fill: Solid;
+    margin-bottom: 1em;
+}
+
+
+
+
+
+/* Styling of Layout three section */
+
+.landing-img-bar {
+    margin-top: .5em;
+}
+
+.landing-img-bar .landing-image-bar {
+    width: 75%;
+}
+
+.landing-section-three-column {
+    flex-direction: column;
+    width: 30%;
+}
+
+.landing-section-three-column + .landing-section-three-column {
+    margin-left: 2em;
+}
+
+.landing-third-row {
+    display: flex;
+}
+
+
+/* Styling of Layout four section */
+
+.landing-fourth-row .landing-layout-cat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.landing-each-cat {
+    color: #000000;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.43rem;
+    font-style: Regular;
+    Fill: Solid;
+    padding: .5em 1em;
+    border-radius: .94rem;
+    border-width: thin;
+}
+
+.landing-each-cat:hover {
+    border: none;
+    color: #FFFFFF;
+    background: #CD8CD8;
+    Fill: Solid;
+    cursor: pointer;
+}
+
+.landing-each-cat + .landing-each-cat {
+    margin-left: .8em;
+}
+
+.landing-layout-cat {
+    margin-bottom: 2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* font-family: 'Oswald', sans-serif; */
+/* font-family: 'Roboto', sans-serif; */

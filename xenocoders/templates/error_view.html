@@ -1,0 +1,23 @@
+{% extends '_partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <main class="custom-main">
+        <div class="custom-first">
+            <h2>Page Not Found!</h2>
+            <p>Sorry, the page you're looking for doesn't exist or has been removed</p>
+            <div class="custom-buttons">
+                <button class="custom-return"><a href="" onClick="window.history.back();return false;">Go back</a></button>
+                <button class="custom-home"><a href="{% url 'home' %}">Homepage</a></button>
+            </div>
+        </div>
+
+        <div class="custom-second">
+            <img src="{% static 'media/illustration.png' %}" alt="">
+        </div>
+    </main>
+</body>
+</html>
+
+{% endblock content %}

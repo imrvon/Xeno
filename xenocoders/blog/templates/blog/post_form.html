@@ -1,0 +1,41 @@
+{% extends '_partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- NEW POST HEADER START -->
+    <div class="add-new-blog">
+        <section class="add-new-post">
+            <div class="add-new-post-header"> <h3>Add New Blog Post</h3> </div>
+        </section>
+        <!-- NEW POST HEADER ENDS -->
+
+        <section class="add-blog">
+            <!-- MAIN CONTAINER STARTS -->
+            <section class="add-main-container" >
+                <!-- NEW POST BODY START -->
+                <div class="add-text-area">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        {{form.media}}
+                        <div class="add-publish">
+                            <input type="submit" value="Add Post" class="add-blog-btn">
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </div>
+
+
+<!-- <h1>Add A New Blog Post</h1>
+<hr>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    {{form.media}}
+    <input type="submit" value="Submit">
+</form> -->
+
+{% endblock %}

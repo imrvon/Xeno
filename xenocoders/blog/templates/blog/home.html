@@ -1,0 +1,235 @@
+{% extends '_partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section>
+    <div class="landing-container">
+        <div class="landing-heading-flex landing-topmost-section">
+            <div>
+                <p class="landing-topmost-text">Latest articles</p>
+            </div>
+            <div class="landing-flex-right">
+                <input type="search" name="Search" id="" class="landing-search-action" placeholder="Search">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="landing-container">
+    <hr class="landing-line-divider">
+</div>
+
+
+<section class="landing-section-container landing-layout-one">
+        <div class="landing-container">
+            <div class="landing-section-content">
+                {% for post in all_posts_list %}
+                    {% if forloop.counter == 1 %}
+                <div class="landing-left_column landing-each_column hero-col">
+                    <div>
+                        <h2 class="landing-column-title"><a href="{% url 'post' post.id %}">{{post.title}}</a></h2>
+                    </div>
+                    <div class="landing-profile-flex">
+                        <div class="landing-profile-pic">
+                            {% if user.userprofile.profile_pic.url %}
+                                <img src="{{user.userprofile.profile_pic.url}}"> 
+                            {% else %}
+                                <img src="{% static 'media/profile_head.png' %}" alt="first profile head of the page" />
+                            {% endif %}
+
+                            
+                        </div>
+                        <div>
+                            <p class="landing-profile-text">{{post.author}}</p>
+                        </div>
+                    </div>
+                    <div class="landing-hero-content">
+                        <p class="landing-hero-text">
+                            {{post.text | safe |slice:":250"}}
+                        </p>
+                    </div>
+                    <div class="landing-timeline-content">
+                        <div class="landing-timeline-flex">
+                            <div class="landing-each_timeline">
+                                <img src="{% static 'media/calendar_icon.png' %}" alt="calendar icon" />
+                                <span class="landing-each_time">{{post.created_on}}</span>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="landing-readmore-btn" onclick="location.href='{% url 'post' post.id %}'">Read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="landing-right_column landing-each_column">
+                    <div class="landing-page-img hero-col-right">
+                        {% if post.header_image %}
+                            <div class="blog-post-article-hero-image first">
+                                <img src="{{post.header_image.url}}" alt="An image kuda man"/>
+                            </div>
+                        {% else %}
+                            <div class="blog-post-article-hero-image">
+                            <img src="{% static 'media/hero_img.png' %}" alt="This is the hero image" class="landing-page-image" />
+                            </div>
+                        {% endif %}
+                        
+                    </div>
+                </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+</section>
+
+<section class="landing-section-container landing-layout-two"> 
+    <div class="landing-container">
+        <div class="landing-top_row heading-flex">
+            <div class="landing-flex-head">
+                <div class="landing-bar-heading">
+                    <h1 class="landing-bar-head">JavaScript</h1>
+                </div>
+            </div>
+            <div class="landing-flex-right">
+                <div>
+                    <a class="landing-link_text" href="{% url 'category' 'Javascript' %}">All JavaScript Articles</a>
+                </div>
+                <div class="landing-right-arrow">
+                    <img src="{% static 'media/arrow_right.png' %}" alt="Pointing of right arrow"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="landing-bottom_row">
+            <div class="landing-section-content">
+                <div class="landing-left_column landing-each_column landing-column-middle">
+                    {% for post in all_posts_list %}
+                        {% if forloop.counter == 2 %}
+                    <div class="landing-page-img">
+                        {% if post.header_image %}
+                            <div class="blog-post-article-hero-image">
+                                <img src="{{post.header_image.url}}" alt="An image kuda man"/> 
+                            </div>
+                        {% else %}
+                            <div class="blog-post-article-hero-image">
+                            <img src="{% static 'media/hero_img.png' %}" alt="This is the hero image" class="landing-page-image" />
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <h2 class="landing-column-title"><a href="{% url 'post' post.id %}">{{post.title}}</a></h2>
+                    </div>
+                    <div class="landing-profile-flex">
+                        <div class="landing-profile-pic">
+                            <img src="{% static 'media/fintech_profile.png' %}" alt="A profile image of the Fintech section" />
+                        </div>
+                        <div>
+                            <p>{{post.author}}</p>
+                        </div>
+                    </div>
+                    <div class="landing-timeline-content">
+                        <div class="landing-timeline-flex">
+                            <div class="landing-each_timeline">
+                                <img src="{% static 'media/calendar_icon.png' %}" alt="calendar icon" />
+                                <span class="landing-each_time">{{post.created_on}}</span>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="landing-readmore-btn" onclick="location.href='{% url 'post' post.id %}'">Read more</a>
+                        </div>
+                    </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+  
+    <div class="landing-right_column landing-each_column landing-column-middle">
+        {% for post in all_posts_list|slice:":3" %}
+        <div class="landing-article-layout">
+            {% if post.header_image %}
+                <div class="blog-post-article-hero-image right">
+                    <img src="{{post.header_image.url}}" alt="An image kuda man"/> 
+                </div>
+            {% else %}
+                <div class="blog-post-article-hero-image right">
+                <img src="{% static 'media/JP_logo.png' %}" alt="This is the hero image" class="landing-page-image" />
+                </div>
+            {% endif %}
+            <div class="landing-article-content right">
+                <h3 class="landing-article-head"><a href="{% url 'post' post.id %}">{{post.title}}</a></h3>
+                <p class="landing-article-text">
+                    {{post.text | safe |slice:":90"}}
+                </p>
+                <div class="landing-article-action">
+                    <a class="landing-readmore-btn" onclick="location.href='{% url 'post' post.id %}'">Read more</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+
+<section class="landing-section-container landing-layout-three">
+    <div class="landing-container">
+        <div class="landing-top_row">
+            <div class="landing-flex-head">
+                <div class="landing-bar-heading">
+                    <h1 class="landing-bar-head">Most Read</h1>
+                </div>
+            </div>
+        </div>
+        <div class="landing-third-row">
+            {% for post in all_posts_list|slice:":3" %}    
+            <div class="landing-section-three-column landing-article-layout bottom">
+                <div class="landing-bottom">
+                    {% if post.header_image %}
+                            <img src="{{post.header_image.url}}" alt="An image kuda man"/> 
+                        {% else %}
+                        <img src="{% static 'media/JP2_logo.png' %}" alt="This is the hero image" class="landing-page-image" />
+                        {% endif %}
+                </div>
+                <h4><a href="{% url 'post' post.id %}">{{post.title}}</a></h4>
+                {% comment %} <p class="landing-article-text">
+                    {{post.text | safe |slice:":100"}}
+                </p> {% endcomment %}
+                <div>
+                    <a class="landing-readmore-btn" onclick="location.href='{% url 'post' post.id %}'">Read more</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="landing-section-container landing-layout-four">
+    <div class="landing-container">
+        <div class="landing-top_row landing-heading-flex">
+            <div class="landing-flex-head">
+                <div class="landing-bar-heading">
+                    <h1 class="landing-bar-head">Tags</h1>
+                </div>
+            </div>
+            <div class="landing-flex-right">
+                <a class="landing-link_text" href="#">View Tags</a>
+                <img src="{% static 'media/arrow_right.png' %}" alt="Pointing arrow" class="landing-right-arrow">
+            </div>
+        </div>
+        <div class="landing-fourth-row">
+            <div class="landing-layout-cat">
+                <a class="landing-each-cat">Responsiveness</a>
+                <a class="landing-each-cat">Tables</a>
+                <a class="landing-each-cat">Accessibility</a>
+                <a class="landing-each-cat">Forms</a>
+                <a class="landing-each-cat">Grid</a>
+                <a class="landing-each-cat">Box Design</a>
+                <a class="landing-each-cat">Semantic Markup</a>
+                <a class="landing-each-cat">DOM Manipulation</a>
+                <a class="landing-each-cat">Typography</a>
+                <a class="landing-each-cat">Flexbox</a>
+                <a class="landing-each-cat">Pseudo Elements</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

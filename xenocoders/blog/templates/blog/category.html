@@ -1,0 +1,53 @@
+{% extends '_partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+		<section class="landing-section-container landing-layout-three">
+			<div class="landing-container">
+				<div class="landing-top_row">
+                    <div class="landing-flex-head">
+                        <div class="landing-bar-heading">
+                            <h1 class="landing-bar-head">{{category}} Category</h1>
+                        </div>
+                    </div>
+				</div>
+				<div class="landing-third-row">
+                    {% for post in category_posts %}
+					<div class="landing-section-three-column landing-article-layout">
+                        <div>
+                            <img src="{{post.header_image.url}}" alt="Just Project logo">
+                        </div>
+                        <div class="cat-author-text">
+                            <p>By {{post.author}} </p>
+                        </div>
+                        <h3 class="landing-article-head"><a href="{% url 'post' post.id %}">{{post.title}}</a></h3>
+                        <p class="landing-article-text">
+                            {{post.text | safe |slice:":200"}}
+                        </p>
+                        <div>
+                            <a href="{% url 'post' post.id %}" class="landing-readmore-btn">Read more</a href="{% url 'post' post.id %}">
+                        </div>
+                    </div>
+                    {% endfor %}
+				</div>
+			</div>
+		</section>
+
+<!-- <h1>{{category}} Category</h1>
+<hr>
+{% for post in category_posts %}
+    <h3><a href="{% url 'post' post.id %}">{{post.title}}</a></h3>
+    {% for tag in post.category.all %}
+     -<small>{{ tag }}</small>
+    {% endfor %}
+    {{post.text | safe |slice:":400"}}<br>
+    By {{post.author}}<br>
+    <small>{{post.created_on}}</small>
+{% endfor %}
+
+ -->
+
+
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'blog/navbar.html' %}
+{% block content %}
+
+
+
+<h1>Add A New Category</h1>
+<hr>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    {% comment %} {{form.media}} {% endcomment %}
+    <button>Add Category</button>
+</form>
+
+{% endblock %}

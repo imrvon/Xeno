@@ -1,0 +1,76 @@
+{% extends '_partials/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="write-for-us">
+    <div class="write-top-main">
+        <h1> What we do</h1>
+        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat 
+            duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+    </div>
+    <div class="write-middle-main">
+        
+        <div class="write-card">
+            <h1>Web Development</h1>
+            <div class="write-card-image">
+                <div class="write-card-p">
+                    <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis 
+                        deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt 
+                        sint deserunt ut voluptate aute id deserunt nisi.</p>
+                </div>
+                <div class="write-card-image-child">
+                    <img src="{% static 'media/web-design.png' %}" alt="icon">
+                </div>
+            </div>
+        </div>
+
+        <div class="write-card">
+            <h1>Graphics Design</h1>
+            <div class="write-card-image">
+                <div class="write-card-p">
+                    <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis 
+                        deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt 
+                        sint deserunt ut voluptate aute id deserunt nisi.</p>
+                </div>
+                <div class="write-card-image-child">
+                    <img src="{% static 'media/graphic-design.png' %}" alt="icon">
+                </div>
+            </div>
+        </div>
+
+        <div class="write-card">
+            <h1>Animation Creating</h1>
+            <div class="write-card-image">
+                <div class="write-card-p">
+                    <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis 
+                        deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt 
+                        sint deserunt ut voluptate aute id deserunt nisi.</p>
+                </div>
+                <div class="write-card-image-child">
+                    <img src="{% static 'media/guy-with-laptop.png' %}" alt="icon">
+                </div>
+            </div>
+        </div>
+
+        <div class="write-randompic">
+            <img src="{% static 'media/random-pic.png' %}" alt="">
+        </div>
+
+        <div class="write-last-card">
+            <div class="write-last-card-img">
+                <img src="{% static 'media/girl-with-laptop.png' %}" alt="icon">
+            </div>
+            <div class="write-card-image2">
+                <h1>How to write for us</h1>
+                <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt 
+                    mollit dolorte cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut 
+                    voluptate aute id deserunt nisi.</p>
+            </div>
+        </div>
+
+        <div class="btn-write"><a href="{% url 'register' %}" class="write-btn2">Sign Up Now</a></div>
+
+        <img src="images/Rectangle 21 (1).png" alt="">
+
+    </main>
+{% endblock %}

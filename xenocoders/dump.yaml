@@ -1,0 +1,14 @@
+- model : blog.category
+  pk: 1 
+  fields: 
+    name: HTML
+
+- model : blog.category
+  pk: 2 
+  fields: 
+    name: CSS
+
+- model : blog.category
+  pk: 3 
+  fields: 
+    name: Javascript

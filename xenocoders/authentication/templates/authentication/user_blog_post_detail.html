@@ -1,0 +1,10 @@
+{% extends 'blog/navbar.html' %}
+{% block content %}
+
+<h1>{{post.title}}</h1>
+
+{{post.text|safe}}<br>
+<a href="{% url 'update_post' post.id %}">Update</a>
+<a href="{% url 'delete_post' post.id %}">Delete</a>
+
+{% endblock %}
